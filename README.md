@@ -6,7 +6,7 @@ In this example, we follow the [example guide from Spring Batch](https://spring.
 a csv file is read, transformed and then imported in a table.
 
 #### Prerequisites
-This project requires a running docker installation. Spring Boot, using `spring-boot-docker-compose` will automatically launch a postgres docker database. 
+This project requires a running docker installation. Spring Boot, using `spring-boot-docker-compose`, will automatically launch a postgres docker database. 
 
 
 ### How to use
