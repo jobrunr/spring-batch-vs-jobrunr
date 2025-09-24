@@ -5,6 +5,10 @@ This example project shows how to perform ETL jobs using both Spring Batch and J
 In this example, we follow the [example guide from Spring Batch](https://spring.io/guides/gs/batch-processing) where 
 a csv file is read, transformed and then imported in a table.
 
+#### Prerequisites
+This project requires a running docker installation. Spring Boot, using `spring-boot-docker-compose` will automatically launch a postgres docker database. 
+
+
 ### How to use
 - Start the [JobRunrSpringBatchApplication](src/main/java/org/jobrunr/demo/batch/JobRunrSpringBatchApplication.java) in your preferred IDE.
 - navigate to [http://localhost:8080/](http://localhost:8080/)
