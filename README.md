@@ -1,6 +1,6 @@
 ## Batch processing using Spring Batch and JobRunr
 
-This example project shows how to perform ETL jobs using both Spring Batch and JobRunr/
+This example project shows how to perform ETL jobs using both Spring Batch and JobRunr.
 
 In this example, we follow the [example guide from Spring Batch](https://spring.io/guides/gs/batch-processing) where 
 a csv file is read, transformed and then imported in a table.
