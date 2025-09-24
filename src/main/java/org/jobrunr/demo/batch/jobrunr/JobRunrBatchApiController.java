@@ -1,6 +1,5 @@
-package org.jobrunr.demo.batch.api;
+package org.jobrunr.demo.batch.jobrunr;
 
-import org.jobrunr.demo.batch.jobrunr.PersonBatchImport;
 import org.jobrunr.jobs.JobId;
 import org.jobrunr.jobs.context.JobContext;
 import org.jobrunr.scheduling.JobScheduler;

@@ -1,4 +1,4 @@
-package org.jobrunr.demo.batch.api;
+package org.jobrunr.demo.batch.spring;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

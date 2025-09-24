@@ -10,3 +10,8 @@ a csv file is read, transformed and then imported in a table.
 - navigate to [http://localhost:8080/](http://localhost:8080/)
 - And choose how you want to import the [person-data.csv](src/main/resources/person-data.csv)
   
+
+### Code Structure
+- the model can be found in [src/main/java/org/jobrunr/demo/batch/model](src/main/java/org/jobrunr/demo/batch/model)
+- the Spring Batch implementation can be found in [src/main/java/org/jobrunr/demo/batch/spring](src/main/java/org/jobrunr/demo/batch/spring)
+- the JobRunr implementation can be found in [src/main/java/org/jobrunr/demo/batch/jobrunr](src/main/java/org/jobrunr/demo/batch/jobrunr)
