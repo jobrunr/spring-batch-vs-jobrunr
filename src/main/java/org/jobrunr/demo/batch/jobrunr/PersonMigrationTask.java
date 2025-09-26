@@ -35,8 +35,8 @@ public class PersonMigrationTask extends JobRunrEtlTask<String, String, Person> 
                         .build());
     }
 
-    @Override
     // FiniteStream has a performance impact since it counts all lines in the file but shows a progressbar when importing files
+    @Override
     protected FiniteStream<String> extract() throws Exception {
         String personFileToImport = getContext();
         return FiniteStream.usingStreamCount(() -> Files.lines(Path.of(personFileToImport)));
