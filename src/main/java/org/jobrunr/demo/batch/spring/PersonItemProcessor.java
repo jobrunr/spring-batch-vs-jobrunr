@@ -1,6 +1,6 @@
 package org.jobrunr.demo.batch.spring;
 
-import org.jobrunr.demo.batch.model.Person;
+import org.jobrunr.demo.batch.common.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;

@@ -1,7 +1,6 @@
 package org.jobrunr.demo.batch.jobrunr;
 
 import org.jobrunr.jobs.JobId;
-import org.jobrunr.jobs.context.JobContext;
 import org.jobrunr.scheduling.JobScheduler;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,7 +20,7 @@ public class JobRunrBatchApiController {
 
     @PostMapping("/start-batch-import")
     public ResponseEntity<?> startBatchImportJob(@RequestParam(name = "file", defaultValue = "./src/main/resources/person-data.csv") String file) {
-        JobId jobId = jobScheduler.<PersonBatchImport>enqueue(x -> x.importUsers(file, JobContext.Null));
+        JobId jobId = jobScheduler.<PersonMigrationTask>enqueue(x -> x.run(file));
         return ResponseEntity.ok("Created batch import job for file '" + file + "' with id '" + jobId + "'");
     }
 }

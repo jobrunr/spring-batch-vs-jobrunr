@@ -18,5 +18,6 @@ spring:
 jobrunr:
   background-job-server:
     enabled: true
+    poll-interval-in-seconds: 5
   dashboard:
     enabled: true

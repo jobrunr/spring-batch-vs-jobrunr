@@ -28,7 +28,7 @@ public class SpringBatchApiController {
     }
 
     @PostMapping("/start-batch-import")
-    public ResponseEntity<?> startBatchImportJob(@RequestParam(name = "file", defaultValue = "./src/main/resources/person-data.csv") String file) throws JobExecutionException {
+    public ResponseEntity<?> startBatchImportJob(@RequestParam(name = "file", defaultValue = "./src/main/resources/person-data.csv") String file) throws JobExecutionException, InterruptedException {
         try {
             JobParameters jobParameters = new JobParametersBuilder()
                     .addString("file", file)

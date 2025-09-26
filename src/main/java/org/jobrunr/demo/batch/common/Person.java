@@ -1,4 +1,4 @@
-package org.jobrunr.demo.batch.model;
+package org.jobrunr.demo.batch.common;
 
 public record Person(String firstName, String lastName) {
 

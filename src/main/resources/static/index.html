@@ -1,17 +1,48 @@
 <html>
 <head>
     <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.min.js"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        function showImportALotOfData(evt) {
+            console.log(evt);
+            if (evt.detail.xhr.status === 200) {
+                htmx.findAll(".hidden").forEach(x => htmx.removeClass(x, "hidden"));
+            }
+        }
+    </script>
 </head>
 <body>
 <h1>Batch Processing using Spring Batch or JobRunr</h1>
 
 <h2>Using Spring Batch</h2>
-<p><a href="#" hx-post="/spring/start-batch-import" hx-target="closest p">Click here</a> to import the file <em>person-data.csv</em> using Spring Batch</p>
+<p>
+    <a href="#" hx-post="/spring/start-batch-import" hx-target="closest p">Click here</a> to import the file <em>person-data.csv</em> using Spring Batch
+</p>
+<p class="hidden">
+    <a href="#" hx-post="/spring/start-batch-import" hx-vals='{"file": "./src/main/resources/a-lot-of-person-data.csv"}' hx-target="closest p">Click here</a>
+    to import the file <em>a-lot-of-person-data.csv</em> using Spring Batch
+</p>
 
 <h2>Using JobRunr</h2>
 <p><a href="#" hx-post="/jobrunr/start-batch-import" hx-target="closest p">Click here</a> to import the file <em>person-data.csv</em> using JobRunr</p>
-
+<p class="hidden">
+    <a href="#" hx-post="/jobrunr/start-batch-import" hx-vals='{"file": "./src/main/resources/a-lot-of-person-data.csv"}' hx-target="closest p">Click here</a>
+    to import the file <em>a-lot-of-person-data.csv</em> using JobRunr
+</p>
 <small><a href="http://localhost:8000/dashboard" target="_blank">Click here</a> to go the JobRunr Dashboard</small>
+
+<div id="a-lot-of-data" class="hidden">
+    <h4>Note:</h4>
+    <p><small hx-trigger="load"
+              hx-get="/common/has-a-lot-of-person-data"
+              hx-target="this"
+              hx-on::after-request="showImportALotOfData(event)"></small>
+    </p>
+</div>
 </body>
 </html>
 

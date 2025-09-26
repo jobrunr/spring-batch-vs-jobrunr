@@ -1,6 +1,6 @@
 package org.jobrunr.demo.batch.spring;
 
-import org.jobrunr.demo.batch.model.Person;
+import org.jobrunr.demo.batch.common.Person;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepScope;
@@ -60,7 +60,7 @@ public class BatchConfiguration {
     public Step step1(JobRepository jobRepository, DataSourceTransactionManager transactionManager,
                       FlatFileItemReader<Person> reader, PersonItemProcessor processor, JdbcBatchItemWriter<Person> writer) {
         return new StepBuilder("step1", jobRepository)
-                .<Person, Person>chunk(10, transactionManager)
+                .<Person, Person>chunk(100, transactionManager)
                 .reader(reader)
                 .processor(processor)
                 .writer(writer)
