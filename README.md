@@ -21,6 +21,7 @@ You can also test an import with a file using 10 million rows. To do so:
 - navigate again to [http://localhost:8080/](http://localhost:8080/) which will show extra links to import the file with 10 million rows
 
 ##### Results:
+###### Macbook M3 Max with 64GB of RAM:
 - importing 10 million rows with Spring Batch: PT4M31.370018S
 - importing 10 million rows with JobRunr: PT3M30.346123S
 
