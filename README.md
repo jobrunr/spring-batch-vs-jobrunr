@@ -51,19 +51,13 @@ How the time is measured:
 Both implementations are single threaded, use chunks of 100 rows, write with JDBC batch inserts and log every converted row at `INFO`, exactly like the Spring guide.
 
 ##### Results
-###### MacBook Pro M4 Pro with 48GB of RAM, October 2026 (Java 25, Spring Boot 4.1.2, Spring Batch 6.0.6, JobRunr 9.0.3), median of 3 runs:
+###### MacBook Pro M4 Pro with 48GB of RAM (Java 25, Spring Boot 4.1.2, Spring Batch 6.0.6, JobRunr 9.0.3):
 | | Run 1 | Run 2 | Run 3 | Median |
 | :--- | :--- | :--- | :--- | :--- |
-| Spring Batch 6.0.6 (`ChunkOrientedStep`) | 4m 12s | 4m 20s | 4m 25s | **4m 20s** |
-| JobRunr 9.0.3 | 3m 01s | 3m 01s | 2m 54s | **3m 01s** |
-| Spring Batch 6.0.6, deprecated `chunk(100, transactionManager)` (diagnostic only) | 4m 09s | 4m 13s | 4m 24s | 4m 13s |
+| Spring Batch 6.0.6 | 4m 02s | 4m 34s | 4m 38s | **4m 34s** |
+| JobRunr 9.0.3 | 3m 13s | 3m 22s | 3m 21s | **3m 21s** |
 
 Every run imported exactly 10,000,000 rows (checked with `select count(*) from people`).
-
-###### 2025 run (Spring Boot 3.5.6, Spring Batch 5.2.3, JobRunr 8.0.2):
-- MacBook M4 Pro with 48GB of RAM: Spring Batch 2m 22s, JobRunr 1m 59s
-- MacBook M3 Max with 64GB of RAM: Spring Batch 4m 31s (PT4M31.370018S), JobRunr 3m 30s (PT3M30.346123S)
-- Lightnode VPS (16 vCPU, 32GB): Spring Batch 11m 33s, JobRunr 7m 55s
 
 ### Upgrading from Spring Boot 3 / Spring Batch 5
 What we had to change for Spring Boot 4, Spring Batch 6 and JobRunr 9:
