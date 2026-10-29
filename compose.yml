@@ -6,4 +6,6 @@ services:
       - POSTGRES_USER=batch-user
       - POSTGRES_PASSWORD=batch-password
     ports:
-      - "5432:5432"
+      # random free host port: Spring Boot's Docker Compose support wires the datasource for you,
+      # so the demo also starts when another Postgres already listens on 5432
+      - "5432"

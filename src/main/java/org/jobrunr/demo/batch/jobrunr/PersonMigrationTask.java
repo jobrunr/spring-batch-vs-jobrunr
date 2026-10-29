@@ -1,8 +1,8 @@
 package org.jobrunr.demo.batch.jobrunr;
 
-import com.fasterxml.jackson.databind.ObjectReader;
-import com.fasterxml.jackson.dataformat.csv.CsvMapper;
-import com.fasterxml.jackson.dataformat.csv.CsvSchema;
+import tools.jackson.databind.ObjectReader;
+import tools.jackson.dataformat.csv.CsvMapper;
+import tools.jackson.dataformat.csv.CsvSchema;
 import org.jobrunr.demo.batch.common.Person;
 import org.jobrunr.jobs.etl.FiniteStream;
 import org.jobrunr.jobs.etl.JobRunrEtlTask;
