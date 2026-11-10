@@ -35,3 +35,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Demo data and dumps ###
+src/main/resources/a-lot-of-person-data.csv
+*.hprof
